@@ -21,6 +21,20 @@ class Solution:
         # print("shift:  ", index)
         return arr
 
+    """
+    Cleaner one, space complexity reduce to O(1) instead of O(n) like above
+    """
+    def duplicateZeros_fromSolution(self, arr: List[int]) -> None:
+        zeroes = arr.count(0)
+        n = len(arr)
+        for i in range(n - 1, -1, -1):
+            if i + zeroes < n:
+                arr[i + zeroes] = arr[i]
+            if arr[i] == 0:
+                zeroes -= 1
+                if i + zeroes < n:
+                    arr[i + zeroes] = 0
+
 s = Solution()
 # input = [1,0,2,3,0,4,5,0]
 # print("input:  ", input)
