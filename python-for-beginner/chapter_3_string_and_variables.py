@@ -88,11 +88,19 @@ def printCat():
     print('{0:7}'.format('( o.o )'))
     print('{0:^7}'.format('> ^ <'))
 
+def create_top_border(text_length:int):
+    print('{} {}'.format(' ' * 11, '_' * text_length))
+
+def create_body(input_text:str):
+    print('{}< {} >'.format(' ' * 11, input_text))
+
+def create_bottom_border(text_length):
+    print('{} {}'.format(' ' * 11, '-' * text_length))
+
 def exec_exercise3():
     text = input('What would you like the cat to say? ')
-    text_length = len(text)
-    print('{} {}'.format(' ' * 11, '_' * text_length))
-    print('{}< {} >'.format(' ' * 11, text))
-    print('{} {}'.format(' ' * 11, '-' * text_length))
+    create_top_border(len(text))
+    create_body(text)
+    create_bottom_border(len(text))
     printCat()
 exec_exercise3()
