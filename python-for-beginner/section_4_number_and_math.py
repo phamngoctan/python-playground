@@ -4,3 +4,9 @@ def run_exponential_operator():
     res = 2 * 2 * 2 * 2
     print('{} = {}'.format(exp, res))
 # run_exponential_operator()
+
+"""
+Tan Pham
+Playground
+"""
+
