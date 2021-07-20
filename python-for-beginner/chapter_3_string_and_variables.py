@@ -65,3 +65,34 @@ print('{} is a lovely fruit'.format(fruit))
 #    .upper()
 #    .lower()
 #    .format()
+
+# Exercise 1
+def exec_exercise1():
+    animal = 'cat'
+    vegatable = 'broccoli'
+    mineral = 'gold'
+    print('Here is an animal, a vegatable, and a mineral')
+    print('cat')
+    print('broccoli')
+    print('gold')
+
+# Exercise 2
+def exec_exercise2():
+    userInput = input('Please type something and press enter: ')
+    print('You entered: {}'.format(userInput))
+
+# Exercise 3
+def printCat():
+    print('{}/'.format(' ' * 11))
+    print('{0:^7}   /'.format('/\\_/\\'))
+    print('{0:7}'.format('( o.o )'))
+    print('{0:^7}'.format('> ^ <'))
+
+def exec_exercise3():
+    text = input('What would you like the cat to say? ')
+    text_length = len(text)
+    print('{} {}'.format(' ' * 11, '_' * text_length))
+    print('{}< {} >'.format(' ' * 11, text))
+    print('{} {}'.format(' ' * 11, '-' * text_length))
+    printCat()
+exec_exercise3()
