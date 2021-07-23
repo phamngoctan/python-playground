@@ -31,6 +31,9 @@ def create_bottom_border(text_length):
 
 def exec_exercise3():
     text = input('What would you like the cat to say? ')
+    cat_say(text)
+
+def cat_say(text):
     create_top_border(len(text))
     create_body(text)
     create_bottom_border(len(text))
