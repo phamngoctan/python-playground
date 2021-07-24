@@ -52,10 +52,39 @@ last_two = animals[4:6]
 assert last_two == ['duck', 'horse']
 last_two_again = animals[-2:]
 assert last_two_again == ['duck', 'horse'], 'but it is {}'.format(last_two_again)
+print('-' * 10)
+
+# Slicing list part 2
+basket = ['a', 'x', 'b', 'd', 'c', 'd', 'e']
+basket.sort()
+basket.reverse()
+reverted_basket = basket[::-1]
+print(reverted_basket)
+print(basket)
+print(list(range(1, 100))) # 1 -> 99
+
+# List unpacking
+try:
+    a,b,c = ['1', '2', '3', '4', '4', '6']
+except Exception as ex:
+    print(ex)
+
+a,b,c, *other, d = ['1', '2', '3', '4', '4', '6', '9']
+assert a == '1' and b == '2' and c == '3'
+assert other == ['4', '4', '6']
+assert d == '9'
+print('-' * 10)
 
 # String Slices
 part_of_a_horse = 'horse'[1:3]
 assert part_of_a_horse == 'or'
+print('-' * 10)
+
+# String join
+sentence = '!'
+new_sentence = sentence.join(['My', 'name', 'is', 'John'])
+print(new_sentence)
+print('-' * 10)
 
 # Finding an item in a list
 animals = ['man', 'bear', 'pig']
