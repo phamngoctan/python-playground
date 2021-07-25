@@ -1,8 +1,11 @@
-- what is Python:
+- 'link': "https://www.interviewbit.com/python-interview-questions/"
+
+- "what is Python":
   - a clear and powerful object-oriented programming language, comparable to Perl, Ruby, Scheme, or Java
   - a high-level, interpreted, general-purpose programming language
   - a program language that lets you work quickly and integrate systems more effectively
 
-- interpreter vs compiler:
+- "interpreter vs compiler":
   - interpretor (like a translator) goes through line by line of code and each line execute the instruction on the machine
   - compiler takes the whole file and transits it to machine code
+
