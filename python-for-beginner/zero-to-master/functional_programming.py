@@ -85,6 +85,14 @@ def exec_exercise():
     reduce1 = reduce(number_accumulator, my_numbers + scores, 0)
     print(reduce1)
     print(reduce(lambda accumulator, initial_val: initial_val + accumulator, my_numbers + scores, 0))
+    print_line_separator()
+
+def lambda_exercise():
+    my_list = [1,2,3]
+    print(list(map(lambda item: item ** item, my_list)))
+    a = [(0, 2), (5, 2), (9, 9), (10, -1)]
+    a.sort(key= lambda x: x[1])
+    print(a)
 
 def main():
     my_list = [1, 2, 3]
@@ -97,6 +105,9 @@ def main():
     exec_reduce_playground(my_list)
 
     exec_exercise()
+
+    lambda_exercise()
+
 
 if __name__ == '__main__':
     main()
