@@ -5,3 +5,12 @@
  - every time finishing one count, add the temp set to the original set
    increase count
  - start the next count
+
+## Visual code shortcuts
+
+```
+duplicate line: SHIFT+ALT + ↓
+assign variable to a selected code: CONTROL+SHIFT+R
+refactor code: CONTROL+SHIFT+ r
+delete line: CONTROL+SHIFT+ k
+```
