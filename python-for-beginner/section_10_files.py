@@ -3,6 +3,13 @@ File
 input() - accept standard input
 print() - write standard output
 File are great for storage that lasts beyond the execution of a program
+
+# file seek(position)
+
+# mode and auto close feature
+with open(..., mode='a') as my_file:
+    pass
+
 """
 
 import os 
