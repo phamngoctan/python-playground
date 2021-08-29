@@ -84,6 +84,8 @@ print('-' * 10)
 sentence = '!'
 new_sentence = sentence.join(['My', 'name', 'is', 'John'])
 print(new_sentence)
+assert new_sentence == 'My!name!is!John'
+
 print('-' * 10)
 
 # Finding an item in a list
