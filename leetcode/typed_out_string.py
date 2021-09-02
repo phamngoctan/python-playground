@@ -1,8 +1,5 @@
 class Solution:
-  def backspaceCompare(self, s: str, t: str) -> bool:
-    # print (f'{s}')
-    # for i in s[::-1]:
-      
+  def backspaceCompare(self, s: str, t: str) -> bool:      
     p1 = len(s) - 1
     p2 = len(t) - 1
     while p1 >= 0 or p2 >= 0:
@@ -12,21 +9,17 @@ class Solution:
           while countBack > 0:
             countBack -= 1
             p1 -= 1
-            # print(f'{countBack}')
             if p1 > 0 and s[p1] == '#':
               countBack += 2
-          # print(f'p1 is {p1}')
 
         if p2 >= 0 and t[p2] == '#':
           countBack = 2
           while countBack > 0:
             countBack -= 1
-            # print(f'{countBack}')
             p2 -= 1
             if p2 > 0 and t[p2] == '#':
               countBack += 2
               
-          # print(f'p2 is {p2}')
       else:
         # print(f'{p1} - {p2}')
         if (p1 >= 0 and p2 < 0) or (p1 < 0 and p2 >= 0) or (s[p1] != t[p2]) :
