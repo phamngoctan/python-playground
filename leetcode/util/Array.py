@@ -15,6 +15,7 @@ except ModuleNotFoundError:
 
 def array_to_bst(array_nums):
   """ at node i, 2*i + 1 is left node, 2*i + 2 is right node
+      This method does not match the expectation from Leetcode, please use the deserialize instead
   """  
   # Base case for recursion
   def insertLevelOrder(arr, root, i, n):
