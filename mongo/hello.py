@@ -31,3 +31,49 @@ for x in range(1, size):
 #Step 5: Tell us that you are done
 print(f'finished creating {size - 1} business reviews')
 
+fivestar = db.reviews.find_one({'rating': 5})
+print('One five star review:')
+pprint(fivestar)
+
+# fiveStarCount = db.reviews.find({'rating': 5}).count()
+fiveStarCount = db.reviews.count_documents({'rating': 5})
+print(f'Five star reviews count: {fiveStarCount}')
+
+print('--------------------- DEMO QUERY AGGREGATION')
+# use the aggregation framework to sum the occurrence of each rating across the entire data set
+print('\nThe sum of each rating occurance across all data grouped by rating ')
+stargroup=db.reviews.aggregate(
+# The Aggregation Pipeline is defined as an array of different operations
+[
+  # The first stage in this pipe is to group data
+  { 
+    '$group':
+      {
+        '_id': "$rating",
+        "count" : { '$sum' :1 }
+      }
+  },
+  # The second stage in this pipe is to sort the data
+  {
+    "$sort":  { "_id":1}
+  }
+])
+# Print the result
+for group in stargroup:
+    print(group)
+
+print('--------------------- DEMO UPDATE')
+aSingleReview = db.reviews.find_one({})
+print(f'Before: {aSingleReview}')
+result = db.reviews.update_one({'_id' : aSingleReview.get('_id') }, {'$inc': {'likes': 1}})
+print('Number of documents modified : ' + str(result.modified_count))
+
+updatedDocument = db.reviews.find_one({'_id': aSingleReview.get('_id')})
+print(f'The updated document: {updatedDocument}')
+
+result = db.reviews.delete_one({'_id': aSingleReview.get('_id')})
+print(f'Number of documents deleted, deleted_count:{result.deleted_count}')
+result = db.reviews.find_one({'_id': aSingleReview.get('_id')})
+print(f'The deleted document should be [None]: {result}')
+
+
