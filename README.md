@@ -13,6 +13,12 @@ duplicate line: SHIFT+ALT + ↓
 assign variable to a selected code: CONTROL+SHIFT+R
 refactor code: CONTROL+SHIFT+ r
 delete line: CONTROL+SHIFT+ k
+
+Folding:
+  Fold All (Ctrl+K Ctrl+0) folds all regions in the editor
+  Fold Level X (Ctrl+K Ctrl+2 for level 2)
+
+Unfold All (Ctrl+K Ctrl+J) unfolds all regions in the editor
 ```
 
 ## Pycharm
