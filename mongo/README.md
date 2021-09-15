@@ -1,4 +1,6 @@
 ## Notice:
+Make sure your MongoDB up and running
+
 To have the Mongo Client, we need to perform the following command to install the libraries:
 
 ```
