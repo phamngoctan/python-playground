@@ -4,3 +4,6 @@
 arr = [[0] * 3 for i in range(3)] 
 arr[0][0] = 1
 print(arr)
+
+arr = [[] for i in range(7)] 
+print(arr)
