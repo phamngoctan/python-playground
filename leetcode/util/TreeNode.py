@@ -5,3 +5,5 @@ class TreeNode:
         self.right = right
     def __repr__(self):
         return 'TreeNode({})'.format(self.val)
+    def __eq__(self, obj):
+        return isinstance(obj, TreeNode) and obj.val == self.val
