@@ -1,4 +1,4 @@
-from util import NArrayNode as Node
+from util import NAryNode as Node
 
 """
 # Definition for a Node.
