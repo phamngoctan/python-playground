@@ -42,6 +42,21 @@ def deserialize(string):
       if kids: node.right = kids.pop()
   return root
 
+def inOrderTraversal(root:TreeNode):
+  def dfs(root, res):
+    if not root:
+      return
+    resLeft = dfs(root.left, res)
+    if resLeft:
+      res.extends(resLeft)
+    res.append(root.val)
+    resRight = dfs(root.right, res)
+    if resRight:
+      res.extends(resRight)
+  res = []
+  dfs(root, res)
+  return res
+
 def printInOrder(node:TreeNode):
   if not node:
     return
