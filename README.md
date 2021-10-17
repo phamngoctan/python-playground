@@ -29,5 +29,5 @@ close all opened files: SHIFT+ALT+ x
 
 ## GIT commit with different user
 ```
-git -c user.name='phamngoctan' -c user.email='pnt.dtqn1991@gmail.com' commit -m "Custom message"
+git -c user.name='phamngoctan' -c user.email='pnt.dtqn1991@gmail.com' commit -m "message"
 ```
