@@ -26,3 +26,8 @@ Unfold All (Ctrl+K Ctrl+J) unfolds all regions in the editor
 go back/forth to file: CONTROL+ALT+ ARROW_LEFT | ARROW_RIGHT
 close all opened files: SHIFT+ALT+ x
 ```
+
+## GIT commit with different user
+```
+git -c user.name='phamngoctan' -c user.email='pnt.dtqn1991@gmail.com' commit -m "message"
+```
