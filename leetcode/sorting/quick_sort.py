@@ -28,7 +28,7 @@ class Solution:
 sol = Solution()
 arr = [5,3,1,6,4,2]
 sol.partition(arr, 0, len(arr) - 1)
-# sol.sort(arr)
+sol.sort(arr)
 print(arr)
 
 
