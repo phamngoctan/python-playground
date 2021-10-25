@@ -16,17 +16,19 @@ class Solution:
     for i in range(26):
       valToStr[i] = chr(ord('a') + i)
     # print(f'{valToStr}')
-    def dfs(root, strVal):
+    def dfs(root, stack):
       if not root:
         return
       global minStr
-      strVal = valToStr[root.val] + strVal
+      stack.append(valToStr[root.val])
       if not root.left and not root.right:
-        if strVal < minStr:
-          minStr = strVal
-      dfs(root.left, strVal)
-      dfs(root.right, strVal)
-    dfs(root, '')
+        curLeaveStr = ''.join(stack[::-1])
+        if curLeaveStr < minStr:
+          minStr = curLeaveStr
+      dfs(root.left, stack)
+      dfs(root.right, stack)
+      stack.pop()
+    dfs(root, [])
     return minStr
 sol = Solution()
 assert sol.smallestFromLeaf(deserialize('[0,1,2,3,4,3,4]')) == 'dba'
