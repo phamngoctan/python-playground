@@ -68,10 +68,11 @@ if __name__ == '__main__':
   
   bst = array_to_bst([1,4,2,3,5,6,8])
   # printInOrder(bst)
-  # bst = deserialize('[2,null,3,null,4,null,5,null,6]')
-  # printInOrder(bst)
+  bst = deserialize('[2,null,3,null,4,null,5,null,6]')
+  printInOrder(bst)
   # bst = deserialize('[]')
   # printInOrder(bst)
   bst = deserialize('[3,9,20,null,null,15,7]')
   printInOrder(bst)
+  inOrderTraversal(deserialize('[2,null,3,null,4,null,5,null,6]'))
   
