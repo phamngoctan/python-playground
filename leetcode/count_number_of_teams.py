@@ -21,7 +21,7 @@ class Solution:
             greaterRight += 1
       res += greaterLeft * lesserRight
       res += lesserLeft * greaterRight
-    return res
+    return res  
         
 sol = Solution()
 assert sol.numTeams([2,5,3,4,1]) == 3
