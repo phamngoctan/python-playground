@@ -19,7 +19,7 @@ class Solution:
       freqS[ch] += 1
       if freqS[ch] == freqT[ch]:
         count += 1
-      while count >= len(freqT): # change to == to test
+      while count == len(freqT):
         if end - start + 1 < resLength:
           resLength = end - start + 1
           resRange = [start, end]
