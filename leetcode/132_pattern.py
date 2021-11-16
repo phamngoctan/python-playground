@@ -1,6 +1,9 @@
 from typing import List
 
 class Solution:
+  '''
+  To be reimplemented
+  '''
   def find132pattern(self, nums: List[int]) -> bool:
     stack, s3 = [], -float("inf")
     for n in nums[::-1]:
@@ -28,17 +31,17 @@ class Solution:
     return False
 sol = Solution()
 assert sol.find132pattern([7,9,10,3,18,16,8]) == True
-# assert sol.find132pattern([1]) == False
-# assert sol.find132pattern([1,2]) == False
-# assert sol.find132pattern([5,6,4]) == False
-# assert sol.find132pattern([3,6,4]) == True
-# assert sol.find132pattern([1,2,3,4]) == False
-# assert sol.find132pattern([3,1,4,2]) == True
-# assert sol.find132pattern([-1,3,2,0]) == True
-# assert sol.find132pattern([3,1,4,2,3]) == True
-# assert sol.find132pattern([3,1,4,5,3]) == True
-# assert sol.find132pattern([3,4,5,1]) == False
-# assert sol.find132pattern([3,4,5,1,5]) == False
-# assert sol.find132pattern([3,4,5,1,5,6,4]) == True
-# assert sol.find132pattern([3,4,5,1,4]) == True
-# assert sol.find132pattern([3,5,0,3,4]) == True
+assert sol.find132pattern([1]) == False
+assert sol.find132pattern([1,2]) == False
+assert sol.find132pattern([5,6,4]) == False
+assert sol.find132pattern([3,6,4]) == True
+assert sol.find132pattern([1,2,3,4]) == False
+assert sol.find132pattern([3,1,4,2]) == True
+assert sol.find132pattern([-1,3,2,0]) == True
+assert sol.find132pattern([3,1,4,2,3]) == True
+assert sol.find132pattern([3,1,4,5,3]) == True
+assert sol.find132pattern([3,4,5,1]) == False
+assert sol.find132pattern([3,4,5,1,5]) == False
+assert sol.find132pattern([3,4,5,1,5,6,4]) == True
+assert sol.find132pattern([3,4,5,1,4]) == True
+assert sol.find132pattern([3,5,0,3,4]) == True
