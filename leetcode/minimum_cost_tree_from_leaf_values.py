@@ -30,3 +30,4 @@ assert sol.mctFromLeafValues([1,2,4]) == 10
 assert sol.mctFromLeafValues([6,2,4]) == 32
 assert sol.mctFromLeafValues([6,2,4,5]) == 58
 assert sol.mctFromLeafValues([5,4,4,3,2,1]) == 56
+assert sol.mctFromLeafValues([6,4,4,2,5,1,2]) == 86
