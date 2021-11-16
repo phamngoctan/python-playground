@@ -17,7 +17,7 @@ class Solution:
   def find132pattern_notFullyWork(self, nums: List[int]) -> bool:
     '''
     Not work because we clean up the whole stack 
-    while we still need to save the previous stac    k
+    while we still need to save the previous stack
     '''
     # if len(nums) < 3:
     #   return False
