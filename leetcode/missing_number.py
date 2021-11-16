@@ -12,6 +12,16 @@ class Solution:
     for i, num in enumerate(nums):
       xorRes = xorRes ^ i ^ num
     return xorRes ^ len(nums)
+  
+  def missingNumber_bruceForce(self, nums: List[int]) -> int:
+    n = len(nums) + 1
+    tmp = [0 for i in range(n)] 
+    for num in nums:
+      tmp[num] = 1
+    for i in range(n):
+      if tmp[i] == 0:
+        return i
+  
 sol = Solution()
 assert sol.missingNumber([3,0,1]) == 2
 assert sol.missingNumber([0,1]) == 2
