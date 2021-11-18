@@ -12,9 +12,6 @@ class Solution:
       elif char == ']':
         previousNum = stack.pop()
         previousStr = stack.pop()
-        # tmp = ''
-        # for i in range(previousNum):
-        #   tmp += curStr
         curStr = previousStr + curStr*previousNum
       elif char.isnumeric():
         curNum = curNum*10 + int(char)
