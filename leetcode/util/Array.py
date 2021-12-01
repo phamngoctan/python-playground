@@ -12,6 +12,20 @@ except ModuleNotFoundError:
     # print('Absolute import failed')
     pass
 
+try:
+    # Trying to find module in the parent package
+    from .ListNode import ListNode
+except ImportError:
+    # print('Relative import failed')
+    pass
+
+try:
+    # Trying to find module on sys.path
+    from ListNode import ListNode
+except ModuleNotFoundError:
+    # print('Absolute import failed')
+    pass
+
 
 def array_to_bst(array_nums):
   """ at node i, 2*i + 1 is left node, 2*i + 2 is right node
@@ -63,6 +77,16 @@ def printInOrder(node:TreeNode):
   printInOrder(node.left)
   print(f'{node.val}')
   printInOrder(node.right)
+
+def fromArrayToListNode(arr):
+  if not arr:
+    return None
+  head = ListNode(arr[0])
+  cur = head
+  for i in range(1, len(arr)):
+    cur.next = ListNode(arr[i])
+    cur = cur.next
+  return head
 
 if __name__ == '__main__':
   
