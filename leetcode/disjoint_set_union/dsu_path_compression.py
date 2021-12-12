@@ -9,6 +9,10 @@ def findSet(u):
   while u != parent[u]:
     u = parent[u]
   return u # parent = None
+def findSet2(u):
+  if parent[u] != u:
+    parent[u] = findSet2(parent[u])
+  return parent[u]
 def unionSet(u, v):
   uParent = findSet(u)
   vParent = findSet(v)
