@@ -7,3 +7,5 @@ class TreeNode:
         return 'TreeNode({})'.format(self.val)
     def __eq__(self, obj):
         return isinstance(obj, TreeNode) and obj.val == self.val
+    def __hash__(self):
+        return hash((id(self), self.val))
