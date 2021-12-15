@@ -3,7 +3,22 @@ from typing import List
 class Solution:
   def rob(self, nums: List[int]) -> int:
     '''
-    DP With memorization
+    DP With memorization - bottom up approach
+    '''
+    def robSegment(nums, i, dp: dict):
+      if not i in dp:
+        if i < 0:
+          return 0
+        ans = max(nums[i] + robSegment(nums, i - 2, dp), robSegment(nums, i - 1, dp))
+        dp[i] = ans
+      return dp[i]
+    ans = robSegment(nums, len(nums) - 1, {})
+    print(f'{ans}')
+    return ans
+  
+  def rob_topDown(self, nums: List[int]) -> int:
+    '''
+    DP With memorization - top down approach
     '''
     def robSegment(nums, currentIndex, dp: dict):
       if not currentIndex in dp:
