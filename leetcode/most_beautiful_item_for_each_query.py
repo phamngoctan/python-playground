@@ -21,13 +21,6 @@ class Solution:
         hi = mid - 1
       else:
         lo = mid
-      # mid = (lo + hi) // 2
-      # if items[mid][0] > target:
-      #   hi = mid - 1
-      # elif items[mid][0] == items[mid + 1][0] and items[mid][1] <= items[mid + 1][1]:
-      #   lo = mid + 1
-      # else:
-      #   lo = mid
     return items[lo][1] if items[lo][0] <= target else 0
 sol = Solution()
 assert sol.maximumBeauty([[1,1],[1,1],[1,2],[1,1],[3,2],[2,4],[5,6],[3,5]], queries = [1,2,3,4,5,6]) == [2,4,5,5,6,6]
