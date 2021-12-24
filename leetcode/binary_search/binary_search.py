@@ -41,6 +41,19 @@ def binary_search_rightMostForInsert(nums, target):
       lo = mid
   return lo
 
+def binary_search_leftMostForInsert(nums, target):
+  # import bisect
+  # return bisect.bisect_left(nums, target)
+  lo, hi = 0, len(nums) # hi = len(nums) because target might > max value
+  while lo < hi:
+    mid = (lo + hi - 1) // 2
+    if nums[mid] < target:
+      lo = mid + 1
+    else:
+      hi = mid
+  # print(f'{lo}')
+  return lo
+
 assert binary_search([1,2,3,4,5,6,7], 5) == 4
 assert binary_search([], 10) == -1
 assert binary_search_rightMost([1,2,2,2,3,4,5,6,7], 2) == 3
@@ -48,3 +61,8 @@ assert binary_search_rightMostForInsert([1,2,2,2,3,4,5,6,7], 2) == 3
 assert binary_search_rightMostForInsert([1,2,2,2,4,5,6,7], 3) == 3
 assert binary_search_rightMostForInsert([1,2,3,4,4,5,6,7], 3) == 2
 assert binary_search_rightMostForInsert([1,2,2,2,4,5,6,7], 3) == 3
+assert binary_search_rightMostForInsert([2,2,2,4,5,6,7], 1) == 0
+assert binary_search_leftMostForInsert([1,1,2,2,2,4,5,6,7], 2) == 2
+assert binary_search_leftMostForInsert([1,1,2,2,4,4,4,5,6,7], 3) == 4
+assert binary_search_leftMostForInsert([1,6,7], 8) == 3
+assert binary_search_leftMostForInsert([1,6,7,10], 11) == 4
