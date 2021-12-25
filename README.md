@@ -31,3 +31,7 @@ close all opened files: SHIFT+ALT+ x
 ```
 git -c user.name='phamngoctan' -c user.email='pnt.dtqn1991@gmail.com' commit -m "message"
 ```
+
+## Max recursion depth for a problem in Leetcode
+
+Currently, max recursion depth in a problem of LC is around 2250.
