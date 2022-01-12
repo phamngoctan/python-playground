@@ -3,14 +3,15 @@ from typing import List
 class Solution:
   def nextGreaterElements(self, nums: List[int]) -> List[int]:
     res = [-1] * len(nums)
-    monotonicStack = []
+    mStack = []
     for i in range(len(nums) * 2):
       num = nums[i % len(nums)]
-      while len(monotonicStack) and num > nums[monotonicStack[-1]]:
-        res[monotonicStack.pop()] = num
-      monotonicStack.append(i % len(nums))
+      while len(mStack) and num > nums[mStack[-1]]:
+        res[mStack.pop()] = num
+      mStack.append(i % len(nums))
     # print(f'{res}')
     return res
+
 sol = Solution()
 assert sol.nextGreaterElements([1,2,1]) == [2,-1,2]
 assert sol.nextGreaterElements([1,2,3,4,3]) == [2,3,4,-1,4]
