@@ -30,6 +30,13 @@ close all opened files: SHIFT+ALT+ x
 ## GIT commit with different user
 ```
 git -c user.name='phamngoctan' -c user.email='pnt.dtqn1991@gmail.com' commit -m "message"
+
+git commit --author="phamngoctan <pnt.dtqn1991@gmail.com>" -m "whatever"
+```
+
+Git amend
+```
+git commit --amend --author="phamngoctan <pnt.dtqn1991@gmail.com>" --no-edit
 ```
 
 ## Max recursion depth for a problem in Leetcode
