@@ -88,6 +88,36 @@ def fromArrayToListNode(arr):
     cur = cur.next
   return head
 
+def serialize_demo(root):
+    if root is None:
+        return []
+    result = str(root.val) + ','
+    last_level = [root]
+    while last_level:
+        new_level = []
+        for node in last_level:
+            result += str(node.left.val) + ',' if node.left is not None else '_,'
+            if node.left is not None:
+                new_level.append(node.left)
+            result += str(node.right.val) + ',' if node.right is not None else '_,'
+            if node.right is not None:
+                new_level.append(node.right)
+        last_level_count = len(last_level)
+        last_level = new_level
+    return result[:-(last_level_count*4 + 1)]
+
+# def sortedArrayToBST(nums):
+#     def convert(left, right):
+#         if left > right:
+#             return None
+#         mid = (left + right) // 2
+#         node = TreeNode(nums[mid])
+#         node.left = convert(left, mid - 1)
+#         node.right = convert(mid + 1, right)
+#         return node
+#     return convert(0, len(nums) - 1)
+
+
 if __name__ == '__main__':
   
   bst = array_to_bst([1,4,2,3,5,6,8])
@@ -99,4 +129,9 @@ if __name__ == '__main__':
   bst = deserialize('[3,9,20,null,null,15,7]')
   printInOrder(bst)
   inOrderTraversal(deserialize('[2,null,3,null,4,null,5,null,6]'))
+
+  sorted_array = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12]
+  print(f"sorted array: {str(sorted_array)}")
+  tree = array_to_bst(sorted_array)
+  print('serialized BST for testing in Leetcode: [' + str(serialize_demo(tree)).replace('_', 'null') + ']')
   
