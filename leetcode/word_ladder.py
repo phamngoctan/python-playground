@@ -11,7 +11,7 @@ class Solution:
       while len(queue) > 0:
         cur, length = queue.popleft()
         if cur == endWord:
-          return length;
+          return length
         for index, char in enumerate(cur):
           for c in 'abcdefghijklmnopqrstuvwxyz':
             newWord = cur[:index] + c + cur[index + 1:]
